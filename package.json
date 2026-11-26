@@ -1,17 +1,19 @@
 {
-  "name": "vimalresume",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "vimal-rk-portfolio-fullstack",
+  "version": "2.0.0",
+  "description": "Professional Full-Stack Developer Portfolio for Vimal R K (React.js + Express.js)",
+  "main": "backend/src/server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/src/server.js",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm install && npm run build",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "pdf-parse": "^2.4.5",
-    "pdfjs-dist": "^6.5.438"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
   }
 }
