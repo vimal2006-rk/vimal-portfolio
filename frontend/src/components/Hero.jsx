@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowDown, Download, Mail, MapPin } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
+import profilePhoto from '../assets/images/profile.jpg';
 
 export default function Hero({ profile }) {
   return (
@@ -76,7 +77,7 @@ export default function Hero({ profile }) {
           <div className="hero-image-container">
             <div className="hero-image-frame">
               <img
-                src="/profile.jpg"
+                src={profilePhoto}
                 alt="Vimal R K - Software Developer"
                 className="hero-image"
                 loading="eager"
