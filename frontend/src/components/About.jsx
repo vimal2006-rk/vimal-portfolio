@@ -3,52 +3,52 @@ import { User, Code2, GraduationCap, Target } from 'lucide-react';
 
 export default function About({ profile }) {
   return (
-    <section id="about" style={{ backgroundColor: 'var(--color-bg-secondary)', borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}>
+    <section id="about" className="about-section">
       <div className="container">
-        <div className="section-title-wrap">
-          <span className="section-eyebrow">Background</span>
-          <h2 className="section-title">About Me</h2>
-          <p className="section-subtitle">
+        <div className="section-header">
+          <span className="section-pill">Background &amp; Focus</span>
+          <h2 className="section-heading">About Me</h2>
+          <p className="section-lead">
             A developer mindset grounded in core fundamentals, academic rigor, and hands-on coding.
           </p>
         </div>
 
         <div className="about-grid">
-          <div className="about-text">
+          <div className="about-paragraphs">
             <p>
               I am an aspiring Software Developer currently pursuing my <strong>Bachelor of Engineering in Computer Science and Engineering</strong> at <strong>K.L.N. College of Engineering, Tamil Nadu</strong> (2023 – 2027, CGPA: 7.84/10).
             </p>
             <p>
-              My programming journey is rooted in writing clean, practical code using <strong>Python, Java, and C</strong>. I enjoy building practical web applications across the full stack with <strong>HTML5, CSS3, JavaScript, Bootstrap, Node.js, Express, and MongoDB</strong>, while exploring intelligent systems through <strong>OpenCV, Machine Learning, and Generative AI</strong>.
+              My programming foundation is built upon writing clean, reliable code with <strong>Python, Java, and C</strong>. I build practical full-stack web applications using <strong>React.js, Node.js, Express.js, MongoDB, JavaScript, and Bootstrap 5</strong>, while engineering intelligent systems through <strong>OpenCV, Machine Learning, and Generative AI</strong>.
             </p>
             <p>
-              Currently, I am actively sharpening my knowledge in <strong>Java and Object-Oriented Programming (OOP) concepts</strong> alongside expanding into <strong>React.js, C#, and .NET</strong>. My goal is to build secure, scalable, and human-friendly software solutions that solve real-world problems.
+              I am actively expanding my capabilities in <strong>Java Object-Oriented Programming (OOP)</strong> and currently learning <strong>C# and .NET</strong> to strengthen software architecture and system design skills.
             </p>
             <p>
-              Having recently completed a practical 2-month <strong>Software Development Internship at DigiTechzo</strong>, I am actively seeking a Software Developer Internship opportunity where I can contribute to meaningful engineering tasks, learn under experienced mentors, and grow professionally.
+              Having recently completed a practical 2-month <strong>Software Development Internship at DigiTechzo</strong>, I am actively seeking an internship opportunity where I can contribute to meaningful engineering tasks, learn under experienced mentors, and grow professionally.
             </p>
           </div>
 
-          <div className="about-details-card">
-            <div className="about-detail-item">
-              <span className="detail-label">Current Status</span>
-              <span className="detail-value">B.E. Computer Science & Engineering</span>
+          <div className="about-metrics-card">
+            <div className="metric-row">
+              <span className="metric-kicker">Academic Degree</span>
+              <span className="metric-title">B.E. Computer Science &amp; Engineering</span>
             </div>
-            <div className="about-detail-item">
-              <span className="detail-label">Institution</span>
-              <span className="detail-value">K.L.N. College of Engineering, TN</span>
+            <div className="metric-row">
+              <span className="metric-kicker">Institution</span>
+              <span className="metric-title">K.L.N. College of Engineering, Tamil Nadu</span>
             </div>
-            <div className="about-detail-item">
-              <span className="detail-label">Current Academic Standing</span>
-              <span className="detail-value">CGPA: 7.84 / 10.0</span>
+            <div className="metric-row">
+              <span className="metric-kicker">Academic Standing</span>
+              <span className="metric-title">CGPA: 7.84 / 10.0</span>
             </div>
-            <div className="about-detail-item">
-              <span className="detail-label">Primary Location</span>
-              <span className="detail-value">Madurai, Tamil Nadu, India</span>
+            <div className="metric-row">
+              <span className="metric-kicker">Location</span>
+              <span className="metric-title">Madurai, Tamil Nadu, India</span>
             </div>
-            <div className="about-detail-item">
-              <span className="detail-label">Core Interests</span>
-              <span className="detail-value">Full Stack Dev, Machine Learning, OOP</span>
+            <div className="metric-row">
+              <span className="metric-kicker">Specialization</span>
+              <span className="metric-title">Full Stack Web &amp; Machine Learning</span>
             </div>
           </div>
         </div>

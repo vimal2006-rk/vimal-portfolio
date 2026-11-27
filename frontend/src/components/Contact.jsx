@@ -51,31 +51,33 @@ export default function Contact({ profile }) {
   };
 
   return (
-    <section id="contact" style={{ backgroundColor: 'var(--color-bg-secondary)', borderTop: '1px solid var(--color-border)' }}>
+    <section id="contact" className="about-section">
       <div className="container">
-        <div className="section-title-wrap">
-          <span className="section-eyebrow">Let's Connect</span>
-          <h2 className="section-title">Contact</h2>
-          <p className="section-subtitle">
-            Open to software developer internship opportunities and collaborative development projects.
+        <div className="section-header">
+          <span className="section-pill">Inquiries &amp; Hiring</span>
+          <h2 className="section-heading">Get in Touch</h2>
+          <p className="section-lead">
+            Open to software developer internship opportunities, collaborative projects, or engineering discussions.
           </p>
         </div>
 
         <div className="contact-grid">
           <div>
-            <h3 style={{ fontSize: '1.25rem', color: 'var(--color-text-primary)', marginBottom: '0.75rem', fontWeight: 600 }}>
-              Direct Communication Channels
+            <h3 style={{ fontSize: '1.25rem', color: 'var(--text-hero)', marginBottom: '0.65rem', fontWeight: 700 }}>
+              Direct Channels
             </h3>
-            <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              Feel free to connect directly via email or professional profiles. I respond to internship queries promptly.
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.25rem' }}>
+              Feel free to reach out directly via email or professional profiles. I respond to internship queries promptly.
             </p>
 
-            <div className="contact-info-list">
-              <a href="mailto:vimalruppa06@gmail.com" className="contact-info-item">
-                <Mail size={20} className="contact-info-icon" />
+            <div className="contact-channels">
+              <a href="mailto:vimalruppa06@gmail.com" className="channel-card">
+                <div className="channel-icon-wrap">
+                  <Mail size={20} />
+                </div>
                 <div>
-                  <div className="contact-info-label">Email</div>
-                  <div className="contact-info-value">{profile?.email || 'vimalruppa06@gmail.com'}</div>
+                  <div className="channel-kicker">Email Address</div>
+                  <div className="channel-value">{profile?.email || 'vimalruppa06@gmail.com'}</div>
                 </div>
               </a>
 
@@ -83,12 +85,14 @@ export default function Contact({ profile }) {
                 href={profile?.linkedin || 'https://linkedin.com/in/vimal-r-k'}
                 target="_blank"
                 rel="noreferrer"
-                className="contact-info-item"
+                className="channel-card"
               >
-                <LinkedinIcon size={20} className="contact-info-icon" />
+                <div className="channel-icon-wrap">
+                  <LinkedinIcon size={20} />
+                </div>
                 <div>
-                  <div className="contact-info-label">LinkedIn</div>
-                  <div className="contact-info-value">linkedin.com/in/vimal-r-k</div>
+                  <div className="channel-kicker">LinkedIn Profile</div>
+                  <div className="channel-value">linkedin.com/in/vimal-r-k</div>
                 </div>
               </a>
 
@@ -96,40 +100,52 @@ export default function Contact({ profile }) {
                 href={profile?.github || 'https://github.com/Vimal4567'}
                 target="_blank"
                 rel="noreferrer"
-                className="contact-info-item"
+                className="channel-card"
               >
-                <GithubIcon size={20} className="contact-info-icon" />
+                <div className="channel-icon-wrap">
+                  <GithubIcon size={20} />
+                </div>
                 <div>
-                  <div className="contact-info-label">GitHub</div>
-                  <div className="contact-info-value">github.com/Vimal4567</div>
+                  <div className="channel-kicker">GitHub Repositories</div>
+                  <div className="channel-value">github.com/Vimal4567</div>
                 </div>
               </a>
 
-              <div className="contact-info-item" style={{ cursor: 'default' }}>
-                <MapPin size={20} className="contact-info-icon" />
+              <div className="channel-card" style={{ cursor: 'default' }}>
+                <div className="channel-icon-wrap">
+                  <MapPin size={20} />
+                </div>
                 <div>
-                  <div className="contact-info-label">Location</div>
-                  <div className="contact-info-value">{profile?.location || 'Madurai, Tamil Nadu, India'}</div>
+                  <div className="channel-kicker">Location</div>
+                  <div className="channel-value">{profile?.location || 'Madurai, Tamil Nadu, India'}</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="contact-form-card">
-            <h3 style={{ fontSize: '1.2rem', color: 'var(--color-text-primary)', marginBottom: '1.25rem', fontWeight: 600 }}>
-              Send a Message
+          <div className="contact-form-panel">
+            <h3 style={{ fontSize: '1.2rem', color: 'var(--text-hero)', marginBottom: '1.25rem', fontWeight: 700 }}>
+              Send a Direct Note
             </h3>
 
             {feedback.message && (
-              <div className={`form-alert ${feedback.type}`}>
+              <div style={{
+                padding: '0.75rem 1rem',
+                borderRadius: 'var(--radius-sm)',
+                marginBottom: '1.25rem',
+                fontSize: '0.9rem',
+                backgroundColor: feedback.type === 'success' ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)',
+                border: `1px solid ${feedback.type === 'success' ? '#10b981' : '#ef4444'}`,
+                color: feedback.type === 'success' ? '#34d399' : '#f87171'
+              }}>
                 {feedback.message}
               </div>
             )}
 
             <form onSubmit={handleSubmit} noValidate>
-              <div className="form-group">
-                <label htmlFor="name" className="form-label">
-                  Your Full Name
+              <div className="form-group-field">
+                <label htmlFor="name" className="form-field-label">
+                  Your Name
                 </label>
                 <input
                   type="text"
@@ -138,14 +154,14 @@ export default function Contact({ profile }) {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="e.g. Ramesh Kumar"
-                  className="form-input"
+                  className="form-control-input"
                   required
                 />
               </div>
 
-              <div className="form-group">
-                <label htmlFor="email" className="form-label">
-                  Your Email Address
+              <div className="form-group-field">
+                <label htmlFor="email" className="form-field-label">
+                  Your Email
                 </label>
                 <input
                   type="email"
@@ -154,13 +170,13 @@ export default function Contact({ profile }) {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="e.g. ramesh@example.com"
-                  className="form-input"
+                  className="form-control-input"
                   required
                 />
               </div>
 
-              <div className="form-group">
-                <label htmlFor="subject" className="form-label">
+              <div className="form-group-field">
+                <label htmlFor="subject" className="form-field-label">
                   Subject
                 </label>
                 <input
@@ -169,14 +185,14 @@ export default function Contact({ profile }) {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="e.g. Software Developer Internship Opportunity"
-                  className="form-input"
+                  placeholder="e.g. Software Developer Internship"
+                  className="form-control-input"
                   required
                 />
               </div>
 
-              <div className="form-group">
-                <label htmlFor="message" className="form-label">
+              <div className="form-group-field">
+                <label htmlFor="message" className="form-field-label">
                   Message
                 </label>
                 <textarea
@@ -184,8 +200,8 @@ export default function Contact({ profile }) {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Write your note or role description..."
-                  className="form-textarea"
+                  placeholder="Write your note or question here..."
+                  className="form-control-textarea"
                   required
                 ></textarea>
               </div>
@@ -194,12 +210,12 @@ export default function Contact({ profile }) {
                 type="submit"
                 disabled={loading}
                 className="btn btn-primary"
-                style={{ width: '100%', marginTop: '0.5rem' }}
+                style={{ width: '100%', marginTop: '0.5rem', padding: '0.85rem' }}
               >
                 {loading ? (
                   <>
                     <Loader2 size={18} className="animate-spin" />
-                    <span>Transmitting...</span>
+                    <span>Submitting...</span>
                   </>
                 ) : (
                   <>
